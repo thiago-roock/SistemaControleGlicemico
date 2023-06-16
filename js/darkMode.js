@@ -1,6 +1,6 @@
 $(document).ready(function () {
   // pegamos o valor no localStorage
-  const nightModeStorage = localStorage.getItem('modoDarkStorage')
+  const nightModeStorage = localStorage.getItem('modoDarkStorageSCG')
   const nightMode = document.querySelector('#switch-flat')
 
   // caso tenha o valor no localStorage
@@ -22,7 +22,7 @@ $(document).ready(function () {
       // salva o tema no localStorage
       jQuery("#corpo").addClass("is-dark");
 
-      localStorage.setItem('modoDarkStorage', true)
+      localStorage.setItem('modoDarkStorageSCG', true)
 
       return
     }
@@ -30,7 +30,7 @@ $(document).ready(function () {
     jQuery("#corpo").removeClass("is-dark");
     jQuery(".modoDark").show();
     jQuery(".modoWhite").hide();
-    localStorage.removeItem('modoDarkStorage')
+    localStorage.removeItem('modoDarkStorageSCG')
   })
 
 
