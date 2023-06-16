@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Sistema para Controle Glicêmico">
@@ -38,6 +39,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
     <link rel="stylesheet" href="./css/site.css" />
 </head>
+
 <body>
     <section id="corpo" class="hero is-white is-bold is-fullheight">
         <!-- Hero head: will stick at the top -->
@@ -45,28 +47,23 @@
             <header class="navbar">
                 <div class="container">
                     <div class="navbar-brand">
-                        <a class="navbar-item is-active">
-                            <span class="icon">
-                                <i class="fas fa-syringe"></i>
-                            </span>
-                        </a>
-                        <a class="navbar-item" href="https://thiago-roock.github.io/SistemaControleGlicemico/" target="_blank">
-                            UmDiaDeCadaVez
-                            <span class="icon">
-                                <i class="fas fa-smile"></i>
-                            </span>
-                        </a>
-                        <span class="navbar-burger burger" data-target="navbarMenuHeroC">
-                            <span></span>
-                        </span>
-                    </div>
-                    <div id="navbarMenuHeroC" class="navbar-menu">
-                        <div class="navbar-end">
+                        <div class="navbar-item is-active">
                             <div class="switch__container">
                                 <p class="text-center">Modo Escuro</p>
                                 <input id="switch-flat" class="switch switch--flat" type="checkbox">
                                 <label for="switch-flat"></label>
                             </div>
+                        </div>
+                    </div>
+                    <div id="navbarMenuHeroC" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a class="navbar-item" href="https://thiago-roock.github.io/UmDiaDeCadaVez/"
+                                target="_blank">
+                                UmDiaDeCadaVez
+                                <span class="icon">
+                                    <i class="fas fa-smile"></i>
+                                </span>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -152,8 +149,8 @@
 
                         </div>
                     </div>
-                    <div class="form-secundario column hero is-dark">
-                        <div class="card hero is-dark">
+                    <div class="form-secundario column hero is-info">
+                        <div class="card hero is-info">
                             <div class="card-content">
                                 <p id="resultado" class="title">
                                 </p>
@@ -172,8 +169,7 @@
             <nav class="tabs is-boxed is-fullwidth level is-mobile">
                 <div class="level-item has-text-centered">
                     <div>
-                        <a id="redesocial" class="navbar-item link-danger"
-                            href="https://www.instagram.com/thiago_roock/" target="_blank">
+                        <a class="redesocial" href="https://www.instagram.com/thiago_roock/" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                                 class="bi bi-instagram" viewBox="0 0 16 16">
                                 <path
@@ -186,13 +182,13 @@
                     <div>
                         <p>&#9400;
                             <script>document.write(new Date().getFullYear());</script> desenvolvido por <a id="rodapeT"
-                                href="https://github.com/thiago-roock" target="_blank" class="text-dark">Thiago D.</a>
+                                href="https://github.com/thiago-roock" target="_blank">Thiago D.</a>
                         </p>
                     </div>
                 </div>
                 <div class="level-item has-text-centered">
                     <div>
-                        <a id="redesocial" class="navbar-item" href="https://twitter.com/Thiago_Roock" target="_blank">
+                        <a class="redesocial" href="https://twitter.com/Thiago_Roock" target="_blank">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                                 class="bi bi-twitter" viewBox="0 0 16 16">
                                 <path
@@ -206,8 +202,10 @@
     </section>
     <script src="./js/jquery.min.js"></script>
     <script async src="./js/darkMode.js"></script>
-    <script async src="./js/site.js"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <script async src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="./js/calculos.js"></script>
+    <script async src="./js/site.js"></script>
 </body>
+
 </html>
