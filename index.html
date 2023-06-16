@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="description" content="Sistema para Controle Glicêmico">
@@ -38,6 +39,7 @@
     <link rel="stylesheet" href="./css/bulma.min.css" />
     <link rel="stylesheet" href="./css/site.css" />
 </head>
+
 <body>
     <section id="corpo" class="hero is-link is-bold is-fullheight">
         <!-- Hero head: will stick at the top -->
@@ -46,7 +48,7 @@
                 <div class="container">
                     <div class="navbar-brand">
                         <div class="navbar-item is-active">
-                            
+
                         </div>
                     </div>
                     <div id="navbarMenuHeroC" class="navbar-menu is-active">
@@ -60,7 +62,7 @@
                         </div>
                         <div class="navbar-end">
                             <div class="navbar-item switch__container">
-                                <span>Modo Escuro</span>
+                                <span class="navbar-item">Modo Escuro</span>
                                 <input id="switch-flat" class="switch switch--flat" type="checkbox">
                                 <label for="switch-flat"></label>
                             </div>
@@ -160,7 +162,8 @@
             <nav class="tabs is-boxed is-fullwidth level is-mobile">
                 <div class="level-item has-text-centered">
                     <div>
-                        <a class="redesocial" href="https://www.instagram.com/thiago_roock/" target="_blank">
+                        <a class="redesocial" href="https://www.instagram.com/thiago_roock/" target="_blank"
+                            aria-label="icone do instagram">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                                 class="bi bi-instagram" viewBox="0 0 16 16">
                                 <path
@@ -171,15 +174,16 @@
                 </div>
                 <div class="level-item has-text-centered">
                     <div>
-                        <p>&#9400;
-                            <script>document.write(new Date().getFullYear());</script> desenvolvido por <a id="rodapeT"
+                        <h6 id="rodapeT" class="subtitle is-6">&#9400;
+                            <script sync>document.write(new Date().getFullYear());</script> desenvolvido por <a
                                 href="https://github.com/thiago-roock" target="_blank">Thiago D.</a>
-                        </p>
+                        </h6>
                     </div>
                 </div>
                 <div class="level-item has-text-centered">
                     <div>
-                        <a class="redesocial" href="https://twitter.com/Thiago_Roock" target="_blank">
+                        <a class="redesocial" href="https://twitter.com/Thiago_Roock" target="_blank"
+                            aria-label="icone do twitter">
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                                 class="bi bi-twitter" viewBox="0 0 16 16">
                                 <path
@@ -193,8 +197,8 @@
     </section>
     <script src="./js/jquery.min.js"></script>
     <script async src="./js/darkMode.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script async src="./js/all.min.js"></script>
+    <script async src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="./js/calculos.js"></script>
     <script async src="./js/site.js"></script>
 </body>
