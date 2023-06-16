@@ -4,7 +4,7 @@ $(window).on("load", function () {
     $("#qtdCarbo").prop("disabled", true);
 
     var typed = new Typed('#resultado', {
-        strings: ['Seja bem-vindo ;)', 'Preencha o formulário ao lado!'],
+        strings: ['Seja bem-vindo ;)', 'Preencha o formulário!'],
         typeSpeed: 50,
         backSpeed: 0,
         fadeOut: true,
@@ -59,6 +59,7 @@ $(window).on("load", function () {
 
     function limparCampos() {
         $('#qtdCarbo').val("");
+        $("#qtdCarbo").prop("disabled", true);
         $('#carboReferencia').val("");
         $('#unidadeReferencia').val("");
         $('#valorGlicemia').val("");
