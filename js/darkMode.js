@@ -7,7 +7,9 @@ $(document).ready(function () {
   if (nightModeStorage) {
     // ativa o night mode
     document.documentElement.classList.add('night-mode')
-    jQuery("#corpo").addClass("is-dark");
+    jQuery("#corpo").removeClass("is-link");
+    jQuery("#corpo").addClass("is-black");
+
     // já deixa o input marcado como ativo
     nightMode.checked = true
   }
@@ -20,14 +22,16 @@ $(document).ready(function () {
     // se tiver a classe night-mode
     if (document.documentElement.classList.contains('night-mode')) {
       // salva o tema no localStorage
-      jQuery("#corpo").addClass("is-dark");
+      jQuery("#corpo").removeClass("is-link");
+      jQuery("#corpo").addClass("is-black");
 
       localStorage.setItem('modoDarkStorageSCG', true)
 
       return
     }
     // senão remove
-    jQuery("#corpo").removeClass("is-dark");
+    jQuery("#corpo").removeClass("is-black");
+    jQuery("#corpo").addClass("is-link");
     jQuery(".modoDark").show();
     jQuery(".modoWhite").hide();
     localStorage.removeItem('modoDarkStorageSCG')
