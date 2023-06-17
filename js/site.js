@@ -1,5 +1,5 @@
 $(window).on("load", function () {
-
+    $('#ano').text(new Date().getFullYear());
     $('#valorGlicemia').focus();
     $("#qtdCarbo").prop("disabled", true);
 
