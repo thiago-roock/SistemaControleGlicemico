@@ -72,7 +72,7 @@ function ArredondamentoDosCalculos(ValorDosagem) {
         ValorArredondado = Math.floor(ValorDosagem);
     }
     else if (casasDecimais == 0.5) {
-        ValorArredondado = Math.ceil(ValorDosagem);
+        ValorArredondado = Math.floor(ValorDosagem);
     }
     else if (casasDecimais >= 0.6 && casasDecimais <= 0.9) {
         ValorArredondado = Math.ceil(ValorDosagem);
