@@ -63,7 +63,7 @@ function ArredondamentoDosCalculos(ValorDosagem) {
 
     var ValorArredondado = 0;
 
-    var casasDecimais = ValorDosagem.toFixed(1).split(".")[1] / 8;
+    var casasDecimais = ValorDosagem.toFixed(1).split(".")[1] / 10;
     console.log("casas decimais:" + casasDecimais);
     if(casasDecimais == 0){
         ValorArredondado = ValorDosagem;
