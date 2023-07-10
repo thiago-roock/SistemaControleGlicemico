@@ -19,23 +19,20 @@ function calcularCorrecaoAntesRefeicao(ValorAtualGlicemia) {
     if (ValorAtualGlicemia < 130) {
         return 0
     }
-    else if (ValorAtualGlicemia >= 130 && ValorAtualGlicemia <= 160) {
+    else if (ValorAtualGlicemia >= 130 && ValorAtualGlicemia <= 170) {
         return 1
     }
-    else if (ValorAtualGlicemia >= 161 && ValorAtualGlicemia <= 190) {
+    else if (ValorAtualGlicemia >= 171 && ValorAtualGlicemia <= 210) {
         return 2
     }
-    else if (ValorAtualGlicemia >= 191 && ValorAtualGlicemia <= 220) {
+    else if (ValorAtualGlicemia >= 211 && ValorAtualGlicemia <= 250) {
         return 3
     }
-    else if (ValorAtualGlicemia >= 221 && ValorAtualGlicemia <= 250) {
+    else if (ValorAtualGlicemia >= 251 && ValorAtualGlicemia <= 290) {
         return 4
     }
-    else if (ValorAtualGlicemia >= 251 && ValorAtualGlicemia <= 280) {
+    else if (ValorAtualGlicemia > 290) {
         return 5
-    }
-    else if (ValorAtualGlicemia > 280) {
-        return 6
     }
 }
 
@@ -43,22 +40,19 @@ function calcularCorrecaoAposRefeicao(ValorAtualGlicemia) {
     if (ValorAtualGlicemia < 160) {
         return 0
     }
-    else if (ValorAtualGlicemia >= 160 && ValorAtualGlicemia <= 190) {
+    else if (ValorAtualGlicemia >= 160 && ValorAtualGlicemia <= 200) {
         return 1
     }
-    else if (ValorAtualGlicemia >= 191 && ValorAtualGlicemia <= 220) {
+    else if (ValorAtualGlicemia >= 201 && ValorAtualGlicemia <= 240) {
         return 2
     }
-    else if (ValorAtualGlicemia >= 221 && ValorAtualGlicemia <= 250) {
+    else if (ValorAtualGlicemia >= 241 && ValorAtualGlicemia <= 280) {
         return 3
     }
-    else if (ValorAtualGlicemia >= 251 && ValorAtualGlicemia <= 280) {
+    else if (ValorAtualGlicemia >= 281 && ValorAtualGlicemia <= 320) {
         return 4
     }
-    else if (ValorAtualGlicemia >= 281 && ValorAtualGlicemia <= 310) {
-        return 5
-    }
-    else if (ValorAtualGlicemia > 310) {
+    else if (ValorAtualGlicemia > 320) {
         return 6
     }
 }
@@ -69,7 +63,7 @@ function ArredondamentoDosCalculos(ValorDosagem) {
 
     var ValorArredondado = 0;
 
-    var casasDecimais = ValorDosagem.toFixed(1).split(".")[1] / 10;
+    var casasDecimais = ValorDosagem.toFixed(1).split(".")[1] / 8;
     console.log("casas decimais:" + casasDecimais);
     if(casasDecimais == 0){
         ValorArredondado = ValorDosagem;
