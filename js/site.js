@@ -51,10 +51,22 @@ $(window).on("load", function () {
         else {
             calcularQtdInsulinaAposRefeicao(ValorAtualGlicemia);
         }
+        limparCampos();
     });
 
     $('#BotaoLimpar').click(function () {
         limparCampos();
+        var typed = new Typed('#resultado', {
+            strings: ['Formulário limpado com sucesso!'],
+            stringsElement: '.typed-strings2',
+            typeSpeed: 20,
+            backSpeed: 0,
+            fadeOut: true,
+            cursorChar: '',
+            cursorShow: true,
+            loop: false,
+        });
+        console.log("limpado com sucesso");
     });
 
     function limparCampos() {
@@ -66,17 +78,6 @@ $(window).on("load", function () {
         $('#resultado').text("");
         $('input:radio[name="member"]').prop('checked', false);
         $('#valorGlicemia').focus();
-        console.log("limpado com sucesso");
-        var typed = new Typed('#resultado', {
-            strings: ['Formulário limpado com sucesso!'],
-            stringsElement: '.typed-strings2',
-            typeSpeed: 20,
-            backSpeed: 0,
-            fadeOut: true,
-            cursorChar: '',
-            cursorShow: true,
-            loop: false,
-        });
     }
 
     $("#radioAntesComer").click(function () {
