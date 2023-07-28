@@ -52,6 +52,7 @@ $(window).on("load", function () {
             calcularQtdInsulinaAposRefeicao(ValorAtualGlicemia);
         }
         limparCampos();
+        $('#resultado').focus();
     });
 
     $('#BotaoLimpar').click(function () {
@@ -66,6 +67,7 @@ $(window).on("load", function () {
             cursorShow: true,
             loop: false,
         });
+        $('#valorGlicemia').focus();
         console.log("limpado com sucesso");
     });
 
@@ -77,7 +79,6 @@ $(window).on("load", function () {
         $('#valorGlicemia').val("");
         $('#resultado').text("");
         $('input:radio[name="member"]').prop('checked', false);
-        $('#valorGlicemia').focus();
     }
 
     $("#radioAntesComer").click(function () {
