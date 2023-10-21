@@ -1,7 +1,7 @@
 # S.C.G ![CodeQL](https://github.com/thiago-roock/SistemaControleGlicemico/workflows/CodeQL/badge.svg)
 > Sistema para Controle Glicêmico.
 
-## Tecnologias utilizadas 🚀 
+## Tecnologias utilizadas🚀 
 
 | Nome   | Descrição                  |
 | ---------- |  --------------------- |
