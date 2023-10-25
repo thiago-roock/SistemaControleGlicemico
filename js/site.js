@@ -42,7 +42,7 @@ $(window).on("load", function () {
         });
 
         var QtdCarbos = $('#qtdCarbo').val();
-        var CarboReferencia = 6;
+        var CarboReferencia = 8;
         var ValorAtualGlicemia = $('#valorGlicemia').val();
 
         if (OpcaoEscolhida == 1) {
