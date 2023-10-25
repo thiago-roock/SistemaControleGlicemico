@@ -16,27 +16,6 @@
 }
 
 function calcularCorrecaoAntesRefeicao(ValorAtualGlicemia) {
-    if (ValorAtualGlicemia < 130) {
-        return 0
-    }
-    else if (ValorAtualGlicemia >= 130 && ValorAtualGlicemia <= 170) {
-        return 1
-    }
-    else if (ValorAtualGlicemia >= 171 && ValorAtualGlicemia <= 210) {
-        return 2
-    }
-    else if (ValorAtualGlicemia >= 211 && ValorAtualGlicemia <= 250) {
-        return 3
-    }
-    else if (ValorAtualGlicemia >= 251 && ValorAtualGlicemia <= 290) {
-        return 4
-    }
-    else if (ValorAtualGlicemia > 290) {
-        return 5
-    }
-}
-
-function calcularCorrecaoAposRefeicao(ValorAtualGlicemia) {
     if (ValorAtualGlicemia < 160) {
         return 0
     }
@@ -49,11 +28,23 @@ function calcularCorrecaoAposRefeicao(ValorAtualGlicemia) {
     else if (ValorAtualGlicemia >= 241 && ValorAtualGlicemia <= 280) {
         return 3
     }
-    else if (ValorAtualGlicemia >= 281 && ValorAtualGlicemia <= 320) {
+    else if (ValorAtualGlicemia > 280) {
         return 4
     }
-    else if (ValorAtualGlicemia > 320) {
-        return 6
+}
+
+function calcularCorrecaoAposRefeicao(ValorAtualGlicemia) {
+    if (ValorAtualGlicemia < 200) {
+        return 0
+    }
+    else if (ValorAtualGlicemia >= 200 && ValorAtualGlicemia <= 240) {
+        return 1
+    }
+    else if (ValorAtualGlicemia >= 241 && ValorAtualGlicemia <= 280) {
+        return 2
+    }
+    else if (ValorAtualGlicemia > 280) {
+        return 3
     }
 }
 
