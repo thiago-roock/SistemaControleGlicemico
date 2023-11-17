@@ -16,24 +16,6 @@
 }
 
 function calcularCorrecaoAntesRefeicao(ValorAtualGlicemia) {
-    if (ValorAtualGlicemia < 160) {
-        return 0
-    }
-    else if (ValorAtualGlicemia >= 160 && ValorAtualGlicemia <= 200) {
-        return 1
-    }
-    else if (ValorAtualGlicemia >= 201 && ValorAtualGlicemia <= 240) {
-        return 2
-    }
-    else if (ValorAtualGlicemia >= 241 && ValorAtualGlicemia <= 280) {
-        return 3
-    }
-    else if (ValorAtualGlicemia > 280) {
-        return 4
-    }
-}
-
-function calcularCorrecaoAposRefeicao(ValorAtualGlicemia) {
     if (ValorAtualGlicemia < 200) {
         return 0
     }
@@ -48,8 +30,29 @@ function calcularCorrecaoAposRefeicao(ValorAtualGlicemia) {
     }
 }
 
-function ArredondamentoDosCalculos(ValorDosagem) {
+function calcularCorrecaoAposRefeicao(ValorAtualGlicemia) {
+    if (ValorAtualGlicemia < 160) {
+        return 0
+    }
+    else if (ValorAtualGlicemia >= 160 && ValorAtualGlicemia <= 200) {
+        return 1
+    }
+    else if (ValorAtualGlicemia >= 201 && ValorAtualGlicemia <= 240) {
+        return 2
+    }
+    else if (ValorAtualGlicemia >= 241 && ValorAtualGlicemia <= 280) {
+        return 3
+    }
+    else if (ValorAtualGlicemia >= 281 && ValorAtualGlicemia <= 320) {
+        return 4
+    }
+    else if (ValorAtualGlicemia > 320) {
+        return 6
+    }
+}
 
+function ArredondamentoDosCalculos(ValorDosagem) 
+{
     console.log("Dosagem sem arrendodamento: " + ValorDosagem);
 
     var ValorArredondado = 0;

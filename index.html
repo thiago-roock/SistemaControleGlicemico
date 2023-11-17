@@ -91,7 +91,7 @@
                         </div>
                         <div class="field is-horizontal">
                             <div class="field-label">
-                                <h6 class="title is-6">Qual tipo do cálculo?</h6>
+                                <h6 class="title is-6">Tipo do cálculo?</h6>
                             </div>
                             <div class="field-body">
                                 <div class="field is-narrow">
@@ -109,14 +109,48 @@
                             </div>
                         </div>
                         <div class="field is-horizontal">
+                            <div class="field-label">
+                                <h6 class="title is-6">Período do dia?</h6>
+                            </div>
+                            <div class="field-body">
+                                <div class="field is-narrow">
+                                    <div class="control has-icons-left">
+                                        <div class="select">
+                                          <select id="sPeriodoDia">
+                                            <option value="1" selected>Manhã</option>
+                                            <option value="2">Tarde</option>
+                                            <option value="3">Noite</option>
+                                          </select>
+                                        </div>
+                                        <span class="icon is-left">
+                                          <i class="fas fa-globe"></i>
+                                        </span>
+                                      </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                                <h6 class="title is-6">Carboidratos de referência</h6>
+                            </div>
+                            <div class="field-body">
+                                <div class="field is-narrow">
+                                    <div class="control">
+                                        <input id="CarboRef" class="input" type="text" placeholder="0" readonly>
+                                    </div>
+                                </div>
+                            </div>
+                        </div> -->
+                        <div class="field is-horizontal">
                             <div class="field-label is-normal">
                                 <h6 class="title is-6">Carboidratos da refeição</h6>
                             </div>
                             <div class="field-body">
                                 <div class="field is-narrow">
                                     <div class="control">
-                                        <input id="qtdCarbo" class="input" type="number" placeholder="48,49">
+                                        <input id="qtdCarbo" class="input" type="number" placeholder="50">
                                     </div>
+                                    <p class="help" id="helpCarboRef">This is a help text</p>
                                 </div>
                             </div>
                         </div>

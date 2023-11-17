@@ -1,7 +1,10 @@
-$(window).on("load", function () {
+$(window).on("load", function () 
+{
+    $('#helpCarboRef').text("");
     $('#ano').text(new Date().getFullYear());
     $('#valorGlicemia').focus();
     $("#qtdCarbo").prop("disabled", true);
+    $("#sPeriodoDia").prop("disabled", true);
 
     var typed = new Typed('#resultado', {
         strings: ['Seja bem-vindo ;)', 'Preencha o formulário!'],
@@ -32,30 +35,66 @@ $(window).on("load", function () {
         });
     }
 
-    $('#BotaoCalcular').click(function () {
-
-        var OpcaoEscolhida = 0;
+    function SelecionarTipoCalculo() 
+    {
+        var OpEscolhida = 0;
 
         $("input:checked").each(function () {
-            OpcaoEscolhida = $(this).val();
+            OpEscolhida = $(this).val();
             console.log($(this).attr("id"));
         });
 
-        var QtdCarbos = $('#qtdCarbo').val();
-        var CarboReferencia = 10;
-        var ValorAtualGlicemia = $('#valorGlicemia').val();
+        return OpEscolhida;
+    }
 
-        if (OpcaoEscolhida == 1) {
+    function SelecionarCarboReferenciaPorPeriodoDia() 
+    {
+        var CarboReferencia = 0;
+
+        var OpSelecionada = $("#sPeriodoDia").find('option:selected').val();
+
+        if(OpSelecionada == 1)
+        {
+            CarboReferencia = 8;
+        }
+        else if (OpSelecionada == 2)
+        {
+            CarboReferencia = 10;
+        }
+        else 
+        {
+            CarboReferencia = 12;
+        }
+
+        return CarboReferencia;
+    }
+
+    $('#BotaoCalcular').click(function () 
+    {
+        var ValorAtualGlicemia = $('#valorGlicemia').val();
+        console.log("Glicemia Atual: " + ValorAtualGlicemia);
+
+        if (SelecionarTipoCalculo() == 1) 
+        {
+            var QtdCarbos = $('#qtdCarbo').val();
+            console.log("Carboidratos da refeição: " + QtdCarbos);
+
+            var CarboReferencia = SelecionarCarboReferenciaPorPeriodoDia();
+
             calcularQtdInsulinaAntesRefeicao(QtdCarbos, CarboReferencia, ValorAtualGlicemia);
         }
-        else {
+        else 
+        {
             calcularQtdInsulinaAposRefeicao(ValorAtualGlicemia);
         }
+
         limparCampos();
         $('#resultado').focus();
     });
 
-    $('#BotaoLimpar').click(function () {
+
+    $('#BotaoLimpar').click(function () 
+    {
         limparCampos();
         var typed = new Typed('#resultado', {
             strings: ['Formulário limpado com sucesso!'],
@@ -71,7 +110,14 @@ $(window).on("load", function () {
         console.log("limpado com sucesso");
     });
 
-    function limparCampos() {
+    $("#sPeriodoDia").change(function()
+    {
+        $('#helpCarboRef').text("Carbo Ref: " + SelecionarCarboReferenciaPorPeriodoDia());
+        console.log($('#helpCarboRef').val());
+    });
+
+    function limparCampos() 
+    {
         $('#qtdCarbo').val("");
         $("#qtdCarbo").prop("disabled", true);
         $('#carboReferencia').val("");
@@ -79,15 +125,22 @@ $(window).on("load", function () {
         $('#valorGlicemia').val("");
         $('#resultado').text("");
         $('input:radio[name="member"]').prop('checked', false);
+        $("#sPeriodoDia").find('option:contains("Manhã")').prop('selected', true);
+        $("#sPeriodoDia").prop("disabled", true);
+        $('#helpCarboRef').text("");
     }
 
-    $("#radioAntesComer").click(function () {
+    $("#radioAntesComer").click(function () 
+    {
         $("#qtdCarbo").prop("disabled", false);
+        $("#sPeriodoDia").prop("disabled", false);
         $('#qtdCarbo').focus();
     });
 
-    $("#radioAposComer").click(function () {
+    $("#radioAposComer").click(function () 
+    {
         $("#qtdCarbo").prop("disabled", true);
+        $("#sPeriodoDia").prop("disabled", true);
         $('#qtdCarbo').val("");
         $('#BotaoCalcular').focus();
     });
