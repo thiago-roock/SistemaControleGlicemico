@@ -65,6 +65,8 @@ $(window).on("load", function ()
         {
             CarboReferencia = 12;
         }
+        
+        console.log("Carbo Ref: " + CarboReferencia);
 
         return CarboReferencia;
     }
@@ -80,6 +82,7 @@ $(window).on("load", function ()
             console.log("Carboidratos da refeição: " + QtdCarbos);
 
             var CarboReferencia = SelecionarCarboReferenciaPorPeriodoDia();
+            $('#helpCarboRef').text("Carbo Ref: " + CarboReferencia);
 
             calcularQtdInsulinaAntesRefeicao(QtdCarbos, CarboReferencia, ValorAtualGlicemia);
         }
@@ -113,7 +116,6 @@ $(window).on("load", function ()
     $("#sPeriodoDia").change(function()
     {
         $('#helpCarboRef').text("Carbo Ref: " + SelecionarCarboReferenciaPorPeriodoDia());
-        console.log($('#helpCarboRef').val());
     });
 
     function limparCampos() 
@@ -134,7 +136,7 @@ $(window).on("load", function ()
     {
         $("#qtdCarbo").prop("disabled", false);
         $("#sPeriodoDia").prop("disabled", false);
-        $('#qtdCarbo').focus();
+        $('#sPeriodoDia').focus();
     });
 
     $("#radioAposComer").click(function () 
