@@ -63,9 +63,9 @@ $(window).on("load", function ()
         }
         else 
         {
-            CarboReferencia = 12;
+            CarboReferencia = 15;
         }
-        
+
         console.log("Carbo Ref: " + CarboReferencia);
 
         return CarboReferencia;
