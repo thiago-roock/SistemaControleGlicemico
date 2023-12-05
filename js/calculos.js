@@ -1,6 +1,6 @@
-    function calcularQtdInsulinaAposRefeicao(ValorAtualGlicemia) {
+    function calcularQtdInsulinaAposRefeicao(GlicemiaAtual, GlicemiaMeta, FatorDeSensibilidade) {
     var bolusCorrecao = 0;
-    bolusCorrecao = calcularCorrecaoAposRefeicao(ValorAtualGlicemia);
+    bolusCorrecao = calcularBolusDeCorrecao(GlicemiaAtual, GlicemiaMeta, FatorDeSensibilidade);
     var texto = "Aplicar <mark>" + bolusCorrecao + "</mark>  Unidades de Insulina!";
     console.log("bolusCorreção: " + bolusCorrecao + " U");
     var typed = new Typed('#resultado', {
@@ -15,48 +15,46 @@
     });
 }
 
-function calcularCorrecaoAntesRefeicao(ValorAtualGlicemia) {
-    if (ValorAtualGlicemia < 200) {
-        return 0
+function calcularBolusDeCorrecao(GlicemiaAtual, GlicemiaMeta, FatorDeSensibilidade)
+ {
+    if(GlicemiaAtual <= GlicemiaMeta)
+    {
+        console.log("Glicemia a ser corrigida: 0");
+        return 0;
     }
-    else if (ValorAtualGlicemia >= 200 && ValorAtualGlicemia <= 240) {
-        return 1
-    }
-    else if (ValorAtualGlicemia >= 241 && ValorAtualGlicemia <= 280) {
-        return 2
-    }
-    else if (ValorAtualGlicemia > 280) {
-        return 3
-    }
+    console.log("Glicemia a ser corrigida: " + (GlicemiaAtual - GlicemiaMeta));
+
+    var BolusCorrecao = (GlicemiaAtual - GlicemiaMeta) / FatorDeSensibilidade;
+
+    console.log("Bolus de Correção sem arrendodamento: " + BolusCorrecao);
+    
+    var BolusCorrecaoArredondado = ArredondamentoDosCalculos(BolusCorrecao);
+
+    console.log("Bolus de Correção com arrendodamento: " + BolusCorrecaoArredondado);
+
+    return BolusCorrecaoArredondado;
 }
 
-function calcularCorrecaoAposRefeicao(ValorAtualGlicemia) {
-    if (ValorAtualGlicemia < 160) {
-        return 0
-    }
-    else if (ValorAtualGlicemia >= 160 && ValorAtualGlicemia <= 200) {
-        return 1
-    }
-    else if (ValorAtualGlicemia >= 201 && ValorAtualGlicemia <= 240) {
-        return 2
-    }
-    else if (ValorAtualGlicemia >= 241 && ValorAtualGlicemia <= 280) {
-        return 3
-    }
-    else if (ValorAtualGlicemia >= 281 && ValorAtualGlicemia <= 320) {
-        return 4
-    }
-    else if (ValorAtualGlicemia > 320) {
-        return 6
-    }
+
+function calcularFatorDeSensibilidade(UnidadesInsulinaUltralenta, UnidadesInsulinaUltraRapida)
+ {
+    var quantidadeInsulinaDiaria = UnidadesInsulinaUltralenta + UnidadesInsulinaUltraRapida;
+    console.log("Quantidade de Insulina Diaria: " + quantidadeInsulinaDiaria);
+
+    var FatorDeSensibilidade = 1800 / quantidadeInsulinaDiaria;
+    console.log("Fator de Sensibilidade sem arrendodamento: : " + FatorDeSensibilidade);
+
+    var FatorDeSensibilidadeArredondado = ArredondamentoDosCalculos(FatorDeSensibilidade);
+    console.log("Fator de Sensibilidade com arrendodamento: " + FatorDeSensibilidadeArredondado);
+
+    return FatorDeSensibilidadeArredondado;
 }
+
 
 function ArredondamentoDosCalculos(ValorDosagem) 
 {
-    console.log("Dosagem sem arrendodamento: " + ValorDosagem);
-
     var ValorArredondado = 0;
-
+    
     var casasDecimais = ValorDosagem.toFixed(1).split(".")[1] / 10;
     console.log("casas decimais:" + casasDecimais);
     if(casasDecimais == 0){
@@ -71,8 +69,9 @@ function ArredondamentoDosCalculos(ValorDosagem)
     else if (casasDecimais >= 0.6 && casasDecimais <= 0.9) {
         ValorArredondado = Math.ceil(ValorDosagem);
     }
-
-    console.log("Dosagem com arrendodamento: " + ValorArredondado);
+    else {
+        ValorArredondado = Math.ceil(ValorDosagem);
+    }
 
     return ValorArredondado;
 }

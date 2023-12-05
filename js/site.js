@@ -17,12 +17,19 @@ $(window).on("load", function ()
         loop: false,
     });
 
-    function calcularQtdInsulinaAntesRefeicao(QtdCarbos, CarboReferencia, ValorAtualGlicemia) {
+    function calcularQtdInsulinaAntesRefeicao(QtdCarbos, CarboReferencia, GlicemiaAtual, GlicemiaMeta, FatorDeSensibilidade) {
         var bolusAlimentar = 0;
-        bolusAlimentar = (QtdCarbos / CarboReferencia) + calcularCorrecaoAntesRefeicao(ValorAtualGlicemia);
+        bolusAlimentar = (QtdCarbos / CarboReferencia) + calcularBolusDeCorrecao(GlicemiaAtual, GlicemiaMeta, FatorDeSensibilidade);
+        
+        console.log("Dosagem sem arrendodamento: " + bolusAlimentar);
+
         var quantidadeInsulina = ArredondamentoDosCalculos(bolusAlimentar);
+
+        console.log("Dosagem com arrendodamento: " + quantidadeInsulina);
+
         var texto = "Aplicar <mark>" + quantidadeInsulina + "</mark> Unidades de Insulina!";
         console.log("quantidadeInsulina: " + quantidadeInsulina + " U");
+
         var typed = new Typed('#resultado', {
             strings: [texto],
             stringsElement: '.typed-strings2',
@@ -66,15 +73,18 @@ $(window).on("load", function ()
             CarboReferencia = 15;
         }
 
-        console.log("Carbo Ref: " + CarboReferencia);
-
         return CarboReferencia;
     }
 
     $('#BotaoCalcular').click(function () 
     {
-        var ValorAtualGlicemia = $('#valorGlicemia').val();
-        console.log("Glicemia Atual: " + ValorAtualGlicemia);
+        var GlicemiaAtual = $('#valorGlicemia').val();
+        console.log("Glicemia Atual: " + GlicemiaAtual);
+
+        var GlicemiaMeta = 140;
+        console.log("Glicemia Meta: " + GlicemiaMeta);
+
+        var FatorDeSensibilidade = calcularFatorDeSensibilidade(20, 15); //UnidadesInsulinaUltralenta, UnidadesInsulinaUltraRapida manha foi 4, almoço foi 5, lanche da tarde 2, jantar 4, madrugada 4
 
         if (SelecionarTipoCalculo() == 1) 
         {
@@ -83,12 +93,14 @@ $(window).on("load", function ()
 
             var CarboReferencia = SelecionarCarboReferenciaPorPeriodoDia();
             $('#helpCarboRef').text("Carbo Ref: " + CarboReferencia);
+            console.log("Carbo Ref: " + CarboReferencia);
 
-            calcularQtdInsulinaAntesRefeicao(QtdCarbos, CarboReferencia, ValorAtualGlicemia);
+
+            calcularQtdInsulinaAntesRefeicao(QtdCarbos, CarboReferencia, GlicemiaAtual, GlicemiaMeta, FatorDeSensibilidade);
         }
         else 
         {
-            calcularQtdInsulinaAposRefeicao(ValorAtualGlicemia);
+            calcularQtdInsulinaAposRefeicao(GlicemiaAtual, GlicemiaMeta, FatorDeSensibilidade);
         }
 
         limparCampos();
