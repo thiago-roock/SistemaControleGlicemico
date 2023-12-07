@@ -64,12 +64,6 @@
                                 </span>
                                 <span>Fator Sensibilidade</span>
                             </a>
-                            <a class="navbar-item" href="https://thiago-roock.github.io/SistemaControleGlicemico/CorrecaoHipoglicemia.html">
-                                <span class="icon">
-                                    <i class="fa-solid fa-candy-cane"></i>
-                                </span>
-                                <span>Correção Hipoglicemia</span>
-                            </a>
                             <a class="navbar-item" href="https://thiago-roock.github.io/SistemaControleGlicemico/Docs/Novo Manual de Contagem de Carboidratos.pdf">
                                 <span class="icon">
                                     <i class="fa-solid fa-file-pdf"></i>
@@ -101,73 +95,8 @@
                             <div class="field-body">
                                 <div class="field is-narrow">
                                     <p class="control is-expanded">
-                                        <input id="valorGlicemia" class="input" type="number" placeholder="180">
+                                        <input id="valorGlicemia" class="input" type="number" placeholder="70">
                                     </p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="field is-horizontal">
-                            <div class="field-label">
-                                <h6 class="title is-6">Tipo do cálculo?</h6>
-                            </div>
-                            <div class="field-body">
-                                <div class="field is-narrow">
-                                    <div class="control">
-                                        <label class="radio">
-                                            <input type="radio" name="member" id="radioAntesComer" value="1">
-                                            Antes de comer
-                                        </label>
-                                        <label class="radio">
-                                            <input type="radio" name="member" id="radioAposComer" value="2">
-                                            2 horas após comer
-                                        </label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="field is-horizontal">
-                            <div class="field-label">
-                                <h6 class="title is-6">Período do dia?</h6>
-                            </div>
-                            <div class="field-body">
-                                <div class="field is-narrow">
-                                    <div class="control has-icons-left">
-                                        <div class="select">
-                                          <select id="sPeriodoDia">
-                                            <option value="1" selected>Manhã</option>
-                                            <option value="2">Tarde</option>
-                                            <option value="3">Noite</option>
-                                          </select>
-                                        </div>
-                                        <span class="icon is-left">
-                                          <i class="fas fa-globe"></i>
-                                        </span>
-                                      </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- <div class="field is-horizontal">
-                            <div class="field-label is-normal">
-                                <h6 class="title is-6">Carboidratos de referência</h6>
-                            </div>
-                            <div class="field-body">
-                                <div class="field is-narrow">
-                                    <div class="control">
-                                        <input id="CarboRef" class="input" type="text" placeholder="0" readonly>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                        <div class="field is-horizontal">
-                            <div class="field-label is-normal">
-                                <h6 class="title is-6">Carboidratos da refeição</h6>
-                            </div>
-                            <div class="field-body">
-                                <div class="field is-narrow">
-                                    <div class="control">
-                                        <input id="qtdCarbo" class="input" type="number" placeholder="50">
-                                    </div>
-                                    <p class="help" id="helpCarboRef"></p>
                                 </div>
                             </div>
                         </div>
@@ -176,12 +105,12 @@
                                 <!-- Left empty for spacing -->
                                 <div class="field">
                                     <div class="control">
-                                        <button id="BotaoCalcular" class="button is-primary">
+                                        <button id="BotaoCorrecaoHipoglicemia" class="button is-primary">
                                             <span class="icon">
                                                 <i class="fa-solid fa-calculator"></i>                                            </span>
                                             <span>Calcular</span>
                                         </button>
-                                        <button id="BotaoLimpar" class="button is-danger">
+                                        <button id="BotaoLimparCorrecaoHipoglicemia" class="button is-danger">
                                             <span class="icon">
                                                 <i class="fas fa-trash"></i>
                                             </span>
@@ -192,6 +121,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="form-secundario column hero is-dark">
                         <div class="card hero is-dark">
                             <div class="card-content">
@@ -202,7 +132,7 @@
                                 </p>
                             </div>
                         </div>
-                        <p class="help" id="helpSCG"></p>
+                        <p class="help" id="helpCorrecaoGlicemia"></p>
                     </div>
 
                 </div>
@@ -258,7 +188,7 @@
     <script async src="./js/all.min.js"></script>
     <script async src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="./js/calculos.js"></script>
-    <script async src="./js/index.js"></script>
+    <script async src="./js/CorrecaoHipoglicemia.js"></script> 
 </body>
 
 </html>

@@ -75,3 +75,21 @@ function ArredondamentoDosCalculos(ValorDosagem)
 
     return ValorArredondado;
 }
+
+function CalcularCorrecaoHipoglicemia(ValorGlicemia) 
+{
+    var resultado = 0;
+    
+    if(ValorGlicemia == 0){
+        resultado = 0;
+    }
+    else if (ValorGlicemia < 50) 
+    {
+        resultado = 30;
+    }
+    else if (ValorGlicemia >= 50 && ValorGlicemia <= 70) {
+        resultado = 15;
+    }
+
+    return resultado;
+}

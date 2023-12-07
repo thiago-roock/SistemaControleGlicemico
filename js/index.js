@@ -95,13 +95,25 @@ $(window).on("load", function ()
             $('#helpCarboRef').text("Carbo Ref: " + CarboReferencia);
             console.log("Carbo Ref: " + CarboReferencia);
 
-
             calcularQtdInsulinaAntesRefeicao(QtdCarbos, CarboReferencia, GlicemiaAtual, GlicemiaMeta, FatorDeSensibilidade);
         }
         else 
         {
             calcularQtdInsulinaAposRefeicao(GlicemiaAtual, GlicemiaMeta, FatorDeSensibilidade);
         }
+
+        var textoHelp = "Aguarde 2 horas e meça novamente sua glicemia.";
+        var typed = new Typed('#helpSCG', {
+            strings: [textoHelp],
+            stringsElement: '.typed-strings2',
+            typeSpeed: 40,
+            startDelay: 3000,
+            backSpeed: 0,
+            fadeOut: true,
+            cursorChar: '',
+            cursorShow: true,
+            loop: false,
+        });
 
         limparCampos();
         $('#resultado').focus();
@@ -111,6 +123,7 @@ $(window).on("load", function ()
     $('#BotaoLimpar').click(function () 
     {
         limparCampos();
+        $('#helpSCG').text("");
         var typed = new Typed('#resultado', {
             strings: ['Formulário limpado com sucesso!'],
             stringsElement: '.typed-strings2',
