@@ -93,3 +93,13 @@ function CalcularCorrecaoHipoglicemia(ValorGlicemia)
 
     return resultado;
 }
+
+function CalcularChoAlimentos(pesoAlimento,valorPorcaoAlimento,valorTotalGordura,valorTotalCarboidratos,valorTotalFibras) 
+{
+    var resultado = 0;
+    
+    resultado = (pesoAlimento * valorTotalCarboidratos) / valorPorcaoAlimento;
+
+    return resultado;
+}
+

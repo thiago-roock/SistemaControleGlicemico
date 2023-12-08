@@ -24,7 +24,7 @@ $(window).on("load", function ()
 
         var FatorDeSensibilidade = calcularFatorDeSensibilidade(20, 15); 
 
-        var texto = "Seu fator de sensibilidade é de <mark>" + FatorDeSensibilidade + "</mark> ";
+        var texto = "Seu fator de sensibilidade é de <mark>" + FatorDeSensibilidade + "</mark>.";
         console.log("FatorDeSensibilidade: " + FatorDeSensibilidade);
 
         var typed = new Typed('#resultado', {

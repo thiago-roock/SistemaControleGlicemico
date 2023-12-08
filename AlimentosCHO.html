@@ -70,12 +70,6 @@
                                 </span>
                                 <span>Correção Hipoglicemia</span>
                             </a>
-                            <a class="navbar-item" href="https://thiago-roock.github.io/SistemaControleGlicemico/AlimentosCHO.html">
-                                <span class="icon">
-                                    <i class="fa-solid fa-calculator"></i>
-                                </span>
-                                <span>CHO Alimento</span>
-                            </a>
                             <a class="navbar-item" href="https://thiago-roock.github.io/SistemaControleGlicemico/Faq.html">
                                 <span class="icon">
                                     <i class="fa-solid fa-person-circle-question"></i>
@@ -106,80 +100,62 @@
                 <div class="columns">
                     <div class="column">
                         <div class="field is-horizontal">
-
                             <div class="field-label is-normal">
-                                <h6 class="title is-6">Glicemia</h6>
+                                <h6 class="title is-6">Peso do Alimento</h6>
                             </div>
                             <div class="field-body">
                                 <div class="field is-narrow">
                                     <p class="control is-expanded">
-                                        <input id="valorGlicemia" class="input" type="number" placeholder="180">
+                                        <input id="pesoAlimento" class="input" type="number" placeholder="Peso do Alimento">
                                     </p>
                                 </div>
                             </div>
                         </div>
                         <div class="field is-horizontal">
-                            <div class="field-label">
-                                <h6 class="title is-6">Tipo do cálculo?</h6>
+                            <div class="field-label is-normal">
+                                <h6 class="title is-6">Porção de Referência</h6>
                             </div>
                             <div class="field-body">
                                 <div class="field is-narrow">
-                                    <div class="control">
-                                        <label class="radio">
-                                            <input type="radio" name="member" id="radioAntesComer" value="1">
-                                            Antes de comer
-                                        </label>
-                                        <label class="radio">
-                                            <input type="radio" name="member" id="radioAposComer" value="2">
-                                            2 horas após comer
-                                        </label>
-                                    </div>
+                                    <p class="control is-expanded">
+                                        <input id="valorPorcaoAlimento" class="input" type="number" placeholder="Tamanho da Porção">
+                                    </p>
                                 </div>
                             </div>
                         </div>
                         <div class="field is-horizontal">
-                            <div class="field-label">
-                                <h6 class="title is-6">Período do dia?</h6>
+                            <div class="field-label is-normal">
+                                <h6 class="title is-6">Total CHO da porção</h6>
                             </div>
                             <div class="field-body">
                                 <div class="field is-narrow">
-                                    <div class="control has-icons-left">
-                                        <div class="select">
-                                          <select id="sPeriodoDia">
-                                            <option value="1" selected>Manhã</option>
-                                            <option value="2">Tarde</option>
-                                            <option value="3">Noite</option>
-                                          </select>
-                                        </div>
-                                        <span class="icon is-left">
-                                          <i class="fas fa-globe"></i>
-                                        </span>
-                                      </div>
+                                    <p class="control is-expanded">
+                                        <input id="valorTotalCarboidratos" class="input" type="number" placeholder="Qtde total de CHO">
+                                    </p>
                                 </div>
                             </div>
                         </div>
-                        <!-- <div class="field is-horizontal">
-                            <div class="field-label is-normal">
-                                <h6 class="title is-6">Carboidratos de referência</h6>
-                            </div>
-                            <div class="field-body">
-                                <div class="field is-narrow">
-                                    <div class="control">
-                                        <input id="CarboRef" class="input" type="text" placeholder="0" readonly>
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
                         <div class="field is-horizontal">
                             <div class="field-label is-normal">
-                                <h6 class="title is-6">CHO da refeição</h6>
+                                <h6 class="title is-6">Total Gordura</h6>
                             </div>
                             <div class="field-body">
                                 <div class="field is-narrow">
-                                    <div class="control">
-                                        <input id="qtdCarbo" class="input" type="number" placeholder="50">
-                                    </div>
-                                    <p class="help" id="helpCarboRef"></p>
+                                    <p class="control is-expanded">
+                                        <input id="valorTotalGordura" class="input" type="number" placeholder="Qtde total de Gordura">
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="field is-horizontal">
+                            <div class="field-label is-normal">
+                                <h6 class="title is-6">Total Fibras</h6>
+                            </div>
+                            <div class="field-body">
+                                <div class="field is-narrow">
+                                    <p class="control is-expanded">
+                                        <input id="valorTotalFibras" class="input" type="number" placeholder="Qtde total de Fibras">
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -188,12 +164,13 @@
                                 <!-- Left empty for spacing -->
                                 <div class="field">
                                     <div class="control">
-                                        <button id="BotaoCalcular" class="button is-primary">
+                                        <button id="BotaoCalcularChoAlimentos" class="button is-primary">
                                             <span class="icon">
-                                                <i class="fa-solid fa-calculator"></i>                                            </span>
+                                                <i class="fa-solid fa-calculator"></i>
+                                            </span>
                                             <span>Calcular</span>
                                         </button>
-                                        <button id="BotaoLimpar" class="button is-danger">
+                                        <button id="BotaoLimparChoAlimentos" class="button is-danger">
                                             <span class="icon">
                                                 <i class="fas fa-trash"></i>
                                             </span>
@@ -204,6 +181,7 @@
                             </div>
                         </div>
                     </div>
+                    
                     <div class="form-secundario column hero is-dark">
                         <div class="card hero is-dark">
                             <div class="card-content">
@@ -214,7 +192,8 @@
                                 </p>
                             </div>
                         </div>
-                        <p class="help" id="helpSCG"></p>
+                        <p class="help" id="helpChoAlimentos1"></p>
+                        <p class="help" id="helpChoAlimentos2"></p>
                     </div>
 
                 </div>
@@ -270,7 +249,7 @@
     <script async src="./js/all.min.js"></script>
     <script async src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
     <script src="./js/calculos.js"></script>
-    <script async src="./js/index.js"></script>
+    <script async src="./js/AlimentosCHO.js"></script> 
 </body>
 
 </html>

@@ -23,7 +23,7 @@ $(window).on("load", function ()
         console.log("valorGlicemia: " + valorGlicemia);
 
         var resultadoCorrecao = CalcularCorrecaoHipoglicemia(valorGlicemia); 
-        var texto1 = "Ingerir <mark>" + resultadoCorrecao + "</mark> gramas de carboidratos.";
+        var texto1 = "Ingerir <mark>" + resultadoCorrecao + "g</mark> de CHO.";
         var texto2 = "";
         if(resultadoCorrecao == 15)
         {
