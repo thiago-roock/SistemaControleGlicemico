@@ -70,7 +70,7 @@ $(window).on("load", function ()
         }
         else 
         {
-            CarboReferencia = 15;
+            CarboReferencia = 18;
         }
 
         return CarboReferencia;
