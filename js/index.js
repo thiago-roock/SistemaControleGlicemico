@@ -62,7 +62,7 @@ $(window).on("load", function ()
 
         if(OpSelecionada == 1)
         {
-            CarboReferencia = 8;
+            CarboReferencia = 10;
         }
         else if (OpSelecionada == 2)
         {
@@ -70,7 +70,7 @@ $(window).on("load", function ()
         }
         else 
         {
-            CarboReferencia = 18;
+            CarboReferencia = 15;
         }
 
         return CarboReferencia;
