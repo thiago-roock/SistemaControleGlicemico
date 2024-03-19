@@ -62,15 +62,15 @@ $(window).on("load", function ()
 
         if(OpSelecionada == 1)
         {
-            CarboReferencia = 10;
+            CarboReferencia = 12;
         }
         else if (OpSelecionada == 2)
         {
-            CarboReferencia = 12;
+            CarboReferencia = 15;
         }
         else 
         {
-            CarboReferencia = 15;
+            CarboReferencia = 18;
         }
 
         return CarboReferencia;
