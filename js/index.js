@@ -62,15 +62,15 @@ $(window).on("load", function ()
 
         if(OpSelecionada == 1)
         {
-            CarboReferencia = 10;
+            CarboReferencia = 8;
         }
         else if (OpSelecionada == 2)
         {
-            CarboReferencia = 12;
+            CarboReferencia = 10;
         }
         else 
         {
-            CarboReferencia = 15;
+            CarboReferencia = 12;
         }
 
         return CarboReferencia;
@@ -84,7 +84,7 @@ $(window).on("load", function ()
         var GlicemiaMeta = 140;
         console.log("Glicemia Meta: " + GlicemiaMeta);
 
-        var FatorDeSensibilidade = calcularFatorDeSensibilidade(23, 15); //UnidadesInsulinaUltralenta, UnidadesInsulinaUltraRapida manha foi 3, almoço foi 3, lanche da tarde 0, jantar 3, madrugada 4
+        var FatorDeSensibilidade = calcularFatorDeSensibilidade(22, 15); //UnidadesInsulinaUltralenta, UnidadesInsulinaUltraRapida manha foi 3, almoço foi 3, lanche da tarde 0, jantar 3, madrugada 4
 
         if (SelecionarTipoCalculo() == 1) 
         {
