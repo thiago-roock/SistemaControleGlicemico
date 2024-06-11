@@ -22,7 +22,7 @@ $(window).on("load", function ()
         var valorInsulinaUltraRapida = $('#valorInsulinaUltraRapida').val();
         console.log("valorInsulinaUltraRapida: " + valorInsulinaUltraRapida);
 
-        var FatorDeSensibilidade = calcularFatorDeSensibilidade(22, 15); 
+        var FatorDeSensibilidade = calcularFatorDeSensibilidade(20, 15); 
 
         var texto = "Seu fator de sensibilidade é de <mark>" + FatorDeSensibilidade + "</mark>.";
         console.log("FatorDeSensibilidade: " + FatorDeSensibilidade);
