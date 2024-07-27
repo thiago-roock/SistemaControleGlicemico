@@ -62,7 +62,7 @@ $(window).on("load", function ()
 
         if(OpSelecionada == 1)
         {
-            CarboReferencia = 6;
+            CarboReferencia = 8;
         }
         else if (OpSelecionada == 2)
         {
