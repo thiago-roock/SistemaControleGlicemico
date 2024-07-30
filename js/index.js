@@ -84,7 +84,7 @@ $(window).on("load", function ()
         var GlicemiaMeta = 140;
         console.log("Glicemia Meta: " + GlicemiaMeta);
 
-        var FatorDeSensibilidade = calcularFatorDeSensibilidade(20, 26); //UnidadesInsulinaUltralenta, UnidadesInsulinaUltraRapida manha foi 6, almoço foi 6, lanche da tarde 4, jantar 6, madrugada 4
+        var FatorDeSensibilidade = calcularFatorDeSensibilidade(20, 30); //UnidadesInsulinaUltralenta, UnidadesInsulinaUltraRapida manha foi 10, almoço foi 6, lanche da tarde 4, jantar 6, madrugada 4
 
         if (SelecionarTipoCalculo() == 1) 
         {
