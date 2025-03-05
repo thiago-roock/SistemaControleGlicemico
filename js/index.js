@@ -58,23 +58,48 @@ $(window).on("load", function ()
     {
         var CarboReferencia = 0;
 
-        var OpSelecionada = $("#sPeriodoDia").find('option:selected').val();
+        var searchCarboRef = $("#sPeriodoDia").find('option:selected').val();
+        console.log("searchCarboRef: " + searchCarboRef);
 
-        if(OpSelecionada == 1)
-        {
-            CarboReferencia = 6;
-        }
-        else if (OpSelecionada == 2)
-        {
-            CarboReferencia = 12;
-        }
-        else 
-        {
-            CarboReferencia = 15;
-        }
-
-        return CarboReferencia;
+        //const url = `http://localhost:3000/carbosReferencia?opSelecionada_like=${searchCarboRef}`;
+        // fetch(url)
+        //     .then((response) => response.json())
+        //     .then((result) => obterResultados(result, searchCarboRef))
+        //     .catch(error => console.log('Request failed: ' + error.message));
+    
+        //localhost
+        // const urlbase = `/api-diabetics/carbosReferencias.json`;
+            
+        //produção
+        const urlbase = `/SistemaControleGlicemico/api-diabetics/carbosReferencias.json`;
+    
+            $.ajax({
+                url: urlbase,
+                type: 'GET',
+                dataType: 'json',
+                async: false,
+                success: function onSuccess(data) 
+                {
+                    CarboReferencia = obterResultados(data, searchCarboRef);
+                }
+              });
+              return CarboReferencia;
     }
+
+    function obterResultados(result, searchCarboRef) 
+    {
+        const filteredCarbosReferencias = result.carbosReferencias.filter(carboRef => carboRef.opSelecionada == searchCarboRef );
+    
+        var CarboReferenciaSelecionada = 0;
+
+        filteredCarbosReferencias.forEach(result => 
+        {  
+            CarboReferenciaSelecionada = result.carboReferencia
+        });
+
+        return CarboReferenciaSelecionada;
+    }
+
 
     $('#BotaoCalcular').click(function () 
     {
